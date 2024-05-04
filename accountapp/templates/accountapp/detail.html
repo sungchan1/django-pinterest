@@ -8,15 +8,17 @@
       {{ target_user.date_joined}}
     </p>
 
-    {% target_user.profile %}
+    {% if target_user.profile %}
     <h2 style="font-family: 'PretendardVariable',cursive; font-weight: bold">
       {{ target_user.profile.nickname }}
     </h2>
 
     {% else %}
+    <a href="{% url 'profileapp:create' %}" >
     <h2 style="font-family: 'PretendardVariable',cursive; font-weight: bold">
-      {{ target_user.username }}
+      Create Profile
     </h2>
+    </a>
 
     {% endif %}
 

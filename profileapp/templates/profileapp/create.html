@@ -12,7 +12,7 @@
 
     </div>
 
-    <form action="{% url 'profileapp:create' %}" method="post">
+    <form action="{% url 'profileapp:create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-primary rounded-pill col-6 mt-3"/>

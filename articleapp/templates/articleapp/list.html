@@ -5,10 +5,19 @@
 {% block content %}
 
 <style>
+.container{
+    padding: 0;
+    margin: 0, auto;
 
+
+}
+.container a{
+    width: 45%;
+    max-width: 250px;
+
+}
 .container div {
   width: 250px;
-  background-color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +51,7 @@
 {% include 'snippets/pagination.html' with page_object=page_object %}
 
 <div style="text-align: center">
-    <a href="{% url 'articleapp:create' %}" class="btn btn-primary rounded-pill col-3 mt-3 mb-3">
+    <a href="{% url 'articleapp:create' %}" class="btn btn-primary rounded-pill px-2 mt-3 mb-3">
         Create Article
     </a>
 </div>

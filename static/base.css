@@ -12,3 +12,10 @@
 .pragmatic_header{
     text-align:center; margin: 2rem 0;
 }
+
+
+@media screen add (max-width:500px) {
+    html {
+        font-size: 13px;
+    }
+}

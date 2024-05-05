@@ -1,36 +1,32 @@
-<div class="pragmatic_header">
-    <div>
-        <h1 class="pragmatic_logo">Pragmatic </h1>
-        <div>
 
-            <a href="{% url 'articleapp:list' %}">
-                <span> Articles </span>
+    <div class="pragmatic_header">
+        <div>
+            <h1 class="pragmatic_logo">Pragmatic</h1>
+        </div>
+        <div class="pragmatic_header_navbar">
+            <a href="{% url 'articleapp:list' %}" class="prgmatic_header_nav">
+                <span>Articles</span>
             </a>
-            <span>nav2</span>
-            <span>nav3</span>
+            <a href="{% url 'projectapp:list' %}" class="prgmatic_header_nav">
+                <span>Projects</span>
+            </a>
+            <a href="{% url 'subscribeapp:list' %}" class="prgmatic_header_nav">
+                <span>Subscription</span>
+            </a>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-                <span> login </span>
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="prgmatic_header_nav">
+                <span>login</span>
             </a>
-            <a href="{% url 'accountapp:create' %}">
-                <span> SignUp </span>
+            <a href="{% url 'accountapp:create' %}" class="prgmatic_header_nav">
+                <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'accountapp:detail' pk=user.pk %}">
-                <span> MyPage </span>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="prgmatic_header_nav">
+                <span>MyPage</span>
             </a>
-            <span>
-                <form action="{% url 'accountapp:logout' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ request.path }}">
-                <button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">
-                    logout
-                </button>
-            </form>
-                </span>
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="prgmatic_header_nav">
+                <span>logout</span>
+            </a>
             {% endif %}
-
         </div>
     </div>
-
-</div>
